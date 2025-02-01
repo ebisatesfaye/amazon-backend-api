@@ -1,5 +1,6 @@
 // const {onRequest} = require("firebase-functions/v2/https");
 // const logger = require("firebase-functions/logger");
+const myql = require("mysql")
 const express = require("express")
 const cors = require("cors")
 const dotenv =  require("dotenv")
@@ -35,7 +36,7 @@ app.post("/payment/create",async(req,res) => {
 
 app.listen(5000,(err)=>{
     if(err) throw err
-    console.log("Amazon server running on PORT: 5000, gttp://localhost:5000")
+    console.log("Amazon server running on PORT: 5000, http://localhost:5000")
 })
 
 
