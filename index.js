@@ -1,6 +1,3 @@
-// const {onRequest} = require("firebase-functions/v2/https");
-// const logger = require("firebase-functions/logger");
-const myql = require("mysql")
 const express = require("express")
 const cors = require("cors")
 const dotenv =  require("dotenv")
@@ -17,7 +14,7 @@ app.get("/",(req,res) => {
 });
 
 app.post("/payment/create",async(req,res) => {
-    const total = req.query.total;
+    const total = parseInt(req.query.total) ;
 
     if (total > 0){
         const paymentIntent = await stripe.paymentIntents.create({
